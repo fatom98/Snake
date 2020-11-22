@@ -16,9 +16,12 @@ class Game:
     def res(self):
         self.pieces = []
         self.finished = False
+        self.score = 0
         self.snake = Snake(self.win)
 
     def update(self):
+
+        self.score = self.snake.score
 
         if not self.snake.finish:
 
@@ -42,7 +45,7 @@ class Game:
             self.win.blit(text, ((WIDTH - text.get_width())//2, (HEIGHT - text.get_height())//2))
             self.finished = True
 
-        score = self.font2.render(f"Score: {self.snake.score}", True, BLUE)
+        score = self.font2.render(f"Score: {self.score}", True, BLUE)
         self.win.blit(score, (WIDTH - score.get_width() - 10, score.get_height() - 10))
 
         pygame.display.update()

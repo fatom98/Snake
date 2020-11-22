@@ -8,6 +8,7 @@ pygame.init()
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Snake")
 clock = pygame.time.Clock()
+FPS = 10
 
 
 def main():
@@ -16,7 +17,8 @@ def main():
     game = Game(WIN)
 
     while run:
-        clock.tick(FPS)
+
+        clock.tick(FPS + game.score//3)
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
