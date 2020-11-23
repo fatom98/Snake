@@ -8,12 +8,14 @@ pygame.init()
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Snake")
 clock = pygame.time.Clock()
-FPS = 10
 
 
 def main():
 
+    FPS = 10
+
     run = True
+    paused = False
     game = Game(WIN)
 
     while run:
@@ -28,7 +30,9 @@ def main():
 
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_q:
+
                         run = False
+
                     elif event.key == pygame.K_a:
                         game.res()
 
@@ -60,6 +64,23 @@ def main():
                     if current != "U" and current != "D":
                         game.modify((1, 0))
                         game.set_snake_pos("D")
+
+                elif event.key == pygame.K_SPACE:
+
+                    paused = True
+
+                    while paused:
+
+                        font = pygame.font.SysFont("comicsans", 60, True)
+                        text = font.render("Paused", True, WHITE)
+                        WIN.blit(text, ((WIDTH - text.get_width())//2, (HEIGHT - text.get_height())//2))
+
+                        for event in pygame.event.get():
+                            if event.type == pygame.KEYDOWN:
+                                if event.key == pygame.K_SPACE:
+                                    paused = False
+
+                        pygame.display.update()
 
         game.update()
 
