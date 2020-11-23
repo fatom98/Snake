@@ -12,4 +12,4 @@ class Piece:
     def draw(self):
         x = self.col * SQUARE_SIZE + SQUARE_SIZE//2
         y = self.row * SQUARE_SIZE + SQUARE_SIZE//2
-        pygame.draw.circle(self.win, RED, (x, y), 5)
+        pygame.draw.circle(self.win, RED, (x, y), RADIUS)

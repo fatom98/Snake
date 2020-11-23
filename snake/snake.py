@@ -7,7 +7,7 @@ class Snake:
 
     def __init__(self, win):
         self.win = win
-        self.body = [[random.randint(0, 29), random.randint(0, 29)]]
+        self.body = [[random.randint(0, ROWS - 1), random.randint(0, COLS - 1)]]
         self.pieces = []
         self.length = 1
         self.direction = (0, 0)
@@ -20,7 +20,7 @@ class Snake:
 
         for row, col in self.body:
 
-            if row != -1 and row != 30 and col != -1 and col != 30:
+            if row != -1 and row != ROWS and col != -1 and col != COLS:
                 for piece in self.pieces:
 
                     if piece.row == row and piece.col == col:

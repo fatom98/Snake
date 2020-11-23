@@ -29,7 +29,7 @@ def main():
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_q:
                         run = False
-                    if event.key == pygame.K_a:
+                    elif event.key == pygame.K_a:
                         game.res()
 
             if event.type == pygame.KEYDOWN:
@@ -43,19 +43,19 @@ def main():
                         game.modify((0, 1))
                         game.set_snake_pos("R")
 
-                if event.key == pygame.K_LEFT:
+                elif event.key == pygame.K_LEFT:
 
                     if current != "R" and current != "L":
                         game.modify((0, -1))
                         game.set_snake_pos("L")
 
-                if event.key == pygame.K_UP:
+                elif event.key == pygame.K_UP:
 
                     if current != "U" and current != "D":
                         game.modify((-1, 0))
                         game.set_snake_pos("U")
 
-                if event.key == pygame.K_DOWN:
+                elif event.key == pygame.K_DOWN:
 
                     if current != "U" and current != "D":
                         game.modify((1, 0))
