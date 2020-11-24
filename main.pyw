@@ -20,7 +20,7 @@ def main():
 
     while run:
 
-        clock.tick(FPS + game.score//3)
+        clock.tick(FPS + game.score//2)
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -44,26 +44,29 @@ def main():
 
                     if current != "R" and current != "L":
 
-                        game.modify((0, 1))
                         game.set_snake_pos("R")
+                        game.modify((0, 1))
 
                 elif event.key == pygame.K_LEFT:
 
                     if current != "R" and current != "L":
-                        game.modify((0, -1))
+
                         game.set_snake_pos("L")
+                        game.modify((0, -1))
 
                 elif event.key == pygame.K_UP:
 
                     if current != "U" and current != "D":
-                        game.modify((-1, 0))
+
                         game.set_snake_pos("U")
+                        game.modify((-1, 0))
 
                 elif event.key == pygame.K_DOWN:
 
                     if current != "U" and current != "D":
-                        game.modify((1, 0))
+
                         game.set_snake_pos("D")
+                        game.modify((1, 0))
 
                 elif event.key == pygame.K_SPACE:
 

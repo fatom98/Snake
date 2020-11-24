@@ -25,14 +25,6 @@ class Game:
         self.high_score = data["high_score"]
         self.snake = Snake(self.win)
 
-    def draw(self):
-
-        for row in range(ROWS):
-            pygame.draw.line(self.win, WHITE, (0, row * SQUARE_SIZE), (WIDTH, row * SQUARE_SIZE))
-
-        for col in range(COLS):
-            pygame.draw.line(self.win, WHITE, (col * SQUARE_SIZE, 0), (col * SQUARE_SIZE, HEIGHT))
-
     def update(self):
 
         if not self.snake.finish:
@@ -41,7 +33,7 @@ class Game:
 
             self.snake.pieces = self.pieces
 
-            if len(self.pieces) < 3:
+            if len(self.pieces) < 5:
                 row, col = random.randint(0, ROWS - 1), random.randint(0, COLS - 1)
                 piece = Piece(self.win, row, col)
                 self.pieces.append(piece)
@@ -49,7 +41,6 @@ class Game:
             for piece in self.pieces:
                 piece.draw()
 
-            # self.draw()
             self.snake.move()
             self.pieces = self.snake.pieces
 
