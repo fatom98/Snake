@@ -29,7 +29,7 @@ class Game:
 
         if not self.snake.finish:
 
-            self.win.fill(BLACK)
+            self.win.fill(WHITE)
 
             self.snake.pieces = self.pieces
 

@@ -75,7 +75,7 @@ def main():
                     while paused:
 
                         font = pygame.font.SysFont("comicsans", 60, True)
-                        text = font.render("Paused", True, WHITE)
+                        text = font.render("Paused", True, BLACK)
                         WIN.blit(text, ((WIDTH - text.get_width())//2, (HEIGHT - text.get_height())//2))
 
                         for event in pygame.event.get():

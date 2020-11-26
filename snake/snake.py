@@ -30,7 +30,7 @@ class Snake:
 
                 x1 = col * SQUARE_SIZE
                 y1 = row * SQUARE_SIZE
-                pygame.draw.rect(self.win, YELLOW, (x1, y1, SQUARE_SIZE, SQUARE_SIZE))
+                pygame.draw.rect(self.win, BLACK, (x1, y1, SQUARE_SIZE, SQUARE_SIZE))
 
             else:
                 self.finished()
