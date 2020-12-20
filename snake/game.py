@@ -29,7 +29,7 @@ class Game:
 
         if not self.snake.finish:
 
-            self.win.fill(WHITE)
+            self.win.fill(BLACK)
 
             self.snake.pieces = self.pieces
 
@@ -45,8 +45,8 @@ class Game:
             self.pieces = self.snake.pieces
 
         else:
-            self.win.fill(WHITE)
-            text = self.font.render("You Lost!!! Q or A", True, BLACK)
+            self.win.fill(BLACK)
+            text = self.font.render("You Lost!!! Q or A", True, WHITE)
             self.win.blit(text, ((WIDTH - text.get_width())//2, (HEIGHT - text.get_height())//2))
 
             obj = {"high_score": self.high_score}

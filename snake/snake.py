@@ -28,9 +28,9 @@ class Snake:
                         self.score += 1
                         self.pieces.remove(piece)
 
-                x1 = col * SQUARE_SIZE
-                y1 = row * SQUARE_SIZE
-                pygame.draw.rect(self.win, BLACK, (x1, y1, SQUARE_SIZE, SQUARE_SIZE))
+                x = col * SQUARE_SIZE
+                y = row * SQUARE_SIZE
+                pygame.draw.rect(self.win, GREEN, (x, y, SQUARE_SIZE, SQUARE_SIZE))
 
             else:
                 self.finished()
